@@ -1,0 +1,101 @@
+1. CREATE DATABASE s290393;
+2. CREATE SCHEMA firma;
+3. CREATE ROLE ksiegowosc;
+   GRANT SELECT ON ALL TABLES IN SCHEMA firma TO ksiegowosc;
+4. Tworzenie tabel:
+   a) CREATE TABLE pracownicy (id_pracownika SERIAL NOT NULL, imie VARCHAR(100) NOT NULL, nazwisko VARCHAR(150) NOT NULL, adres VARCHAR(250) NOT NULL, telefon VARCHAR(15) NOT NULL);
+   b) CREATE TABLE godziny (id_godziny SERIAL NOT NULL, data DATE NOT NULL, liczba_godzin INT NOT NULL, id_pracownika INT NOT NULL);
+   c) CREATE TABLE pensja_stanowisko(id_pensji SERIAL NOT NULL, stanowisko VARCHAR(255) NOT NULL, kwota FLOAT(2) NOT NULL);
+   d) CREATE TABLE premia(id_premii SERIAL NOT NULL, rodzaj VARCHAR(255), kwota FLOAT(2) NOT NULL);
+   e) CREATE TABLE wynagrodzenie(id_wynagrodzenia SERIAL NOT NULL, data DATE NOT NULL, id_pracownika INT NOT NULL, id_godziny INT NOT NULL, id_pensji INT NOT NULL, id_premii INT NOT NULL);
+   
+   Ustawianie kluczy glownych:
+   a) ALTER TABLE pracownicy ADD PRIMARY KEY(id_pracownika);
+   b) ALTER TABLE godziny ADD PRIMARY KEY(id_godziny);
+   c) ALTER TABLE pensja_stanowisko ADD PRIMARY KEY(id_pensji);
+   d) ALTER TABLE premia ADD PRIMARY KEY(id_premii);
+   e) ALTER TABLE wynagrodzenie ADD PRIMARY KEY(id_wynagrodzenia);
+
+   Dodawanie kluczy obcych:
+   a) ALTER TABLE godziny ADD FOREIGN KEY(id_pracownika) REFERENCES pracownicy(id_pracownika);
+   b) ALTER TABLE wynagrodzenie ADD FOREIGN KEY(id_pracownika) REFERENCES pracownicy(id_pracownika);
+   c) ALTER TABLE wynagrodzenie ADD FOREIGN KEY(id_godziny) REFERENCES godziny(id_godziny);
+   d) ALTER TABLE wynagrodzenie ADD FOREIGN KEY(id_pensji) REFERENCES pensja_stanowisko(id_pensji);
+   e) ALTER TABLE wynagrodzenie ADD FOREIGN KEY(id_premii) REFERENCES premia(id_premii);
+
+   Indeksowanie:
+   a) CREATE INDEX godziny_liczba_godzin ON godziny (liczba_godzin DESC);
+   b) CREATE INDEX pensja_stanowisko_kwota ON pensja_stanowisko (kwota DESC);
+   c) CREATE INDEX premia_kwota ON premia (kwota DESC);
+
+   Komentarze:
+   a) COMMENT ON TABLE pracownicy IS 'Tabela przechowuje podstawowe informacje o pracownikach';
+   b) COMMENT ON TABLE godziny IS 'Tabela przechowuje liczbe godzin przepracowana przez pracownikow';
+   c) COMMENT ON TABLE pensja_stanowisko IS 'Tabela przechowuje wynagrodzenia na poszczegolnych stanowiskach';
+   d) COMMENT ON TABLE premia IS 'Tabela przechowuje kwote jak i rodzaj poszczegolnych premii';
+   e) COMMENT ON TABLE wynagrodzenie IS 'Tabela przechowuje liczbe godzin przepracowanych oraz wynagrodzenia pracownikow wraz z wynagrodzeniem bazowym, premia';
+
+5.
+   Dodawanie pracownikow:
+   1) INSERT INTO pracownicy(imie, nazwisko, adres, telefon) VALUES('John', 'Brian', 'Krakow ul Jozefa 2', '530-444-112');
+   2) INSERT INTO pracownicy(imie, nazwisko, adres, telefon) VALUES('Arthur', 'Tyler', 'Krakow ul Staffa 12', '728-414-172');
+   3) INSERT INTO pracownicy(imie, nazwisko, adres, telefon) VALUES('Kate', 'Trex', 'Warszawa ul Warszawska 5', '111-534-222');
+   4) INSERT INTO pracownicy(imie, nazwisko, adres, telefon) VALUES('Paul', 'Smith', 'Warszawa ul Krakowska 7', '929-112-332');
+   5) INSERT INTO pracownicy(imie, nazwisko, adres, telefon) VALUES('Alicia', 'Green', 'Gdansk ul Zielona 3', '622-192-353');
+   6) INSERT INTO pracownicy(imie, nazwisko, adres, telefon) VALUES('Katherine', 'Black', 'Gdansk ul Czarna 18', '722-123-456');
+   7) INSERT INTO pracownicy(imie, nazwisko, adres, telefon) VALUES('James', 'Bond', 'Gdansk ul Biala 3', '987-654-321');
+   8) INSERT INTO pracownicy(imie, nazwisko, adres, telefon) VALUES('John', 'Purple', 'Gdansk ul Torunska 22' '555-666-777');
+   9) INSERT INTO pracownicy(imie, nazwisko, adres, telefon) VALUES('Victor', 'Orange', 'Gdansk ul Pomaranczowa 5', '111-222-333');
+   10) INSERT INTO pracownicy(imie, nazwisko, adres, telefon) VALUES('Adam', 'Pilkowski', 'Gdansk ul Czerwona 81', '444-555-666');
+
+   Dodawanie godzin:
+   Dodanie pola przechowujacego numer tygodnia i miesiac:
+   a) ALTER TABLE godziny ADD numer_tygodnia DATE NOT NULL;
+   b) ALTER TABLE godziny ADD miesiac DATE NOT NULL;
+   Dodawanie rekordow:
+   1)
+   2) 
+   3)
+   4) 
+   5) 
+   6)
+   7)
+   8)
+   9)
+   10)
+
+   Dodawanie pensji:
+   1)
+   2) 
+   3)
+   4) 
+   5) 
+   6)
+   7)
+   8)
+   9)
+   10)
+
+   Dodawanie premii:
+   1)
+   2) 
+   3)
+   4) 
+   5) 
+   6)
+   7)
+   8)
+   9)
+   10)
+
+   Dodawanie wynagrodzen:
+   1)
+   2) 
+   3)
+   4) 
+   5) 
+   6)
+   7)
+   8)
+   9)
+   10)
