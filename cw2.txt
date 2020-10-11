@@ -1,3 +1,5 @@
+1-5.
+Plik wygenerowany przy użyciu narzędzia Vertabelo, jak również użyty plik backup umieszczono w repozytorium pod nazwami Firma_Physical_Model_create.sql oraz backups290393
 6. Wstawianie Danych
 Producenci:
 INSERT INTO sklep.producenci(nazwa_producenta,mail,telefon) VALUES('Producent 1','producent1@test.com','111-222-333');
