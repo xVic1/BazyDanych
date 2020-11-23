@@ -1,0 +1,48 @@
+Wszystkie zrzuty ekranu do tego ćwiczenia znajdują się w katalogu cw6.
+
+1.
+Wyświetlanie innymi kolorami - 1_1.png
+Pole powierzchni - 189273 (1_2.png)
+
+2.
+Przedstawiono na rysunku 2.png
+
+3.
+Długość wyniosła 34883.24 (przedstawiono na rysunku 3.png)
+
+4.
+1)
+Użyty filtr: "USE" LIKE "Military" 
+Średnia wysokość wyniosła 593,25 m n.p.m. (przedstawiono na rysunku 4_1.png)
+2)
+Ilość - 8 (4_2.png)
+3)
+Użyty filtr: "USE" LIKE "Military" AND "ELEV" > 1400
+zaznaczamy "1", następnie Features -> show selected on map, włączamy tryb edycji na airpoirts i usuwamy zaznaczone
+
+5.
+1)
+Takich obiektów jest 11 (5_1.png)
+2)
+Takich obiektów jest 1557 (5_2.png - kolorem fioletowym przedstawiono bufor, gdzie
+rzeki są w obrębie 100 kilometrów. Następnie warstwę popp przycięto).
+
+6.
+8 razy (6.png)
+
+7.
+Jest ich 662 (7.png)
+
+8.
+Rezultat (pokazany na rysunku 8.png kolorem czerwonym) jest to różnica pomiędzy buforem
+lotnisk a buforem kolei. Brak jest danych o warstwie dróg, zatem jej nie uwzględniono
+
+9.
+Przed zmianą:
+pole: 24719,8 km2 (9_1.png)
+wierzchołki: 7469 (9_2.png)
+
+Po zmianie (100 stóp):
+pole się nie zmieniło (9_3.png)
+wierzchołki: 6661 (9_4.png)
+
